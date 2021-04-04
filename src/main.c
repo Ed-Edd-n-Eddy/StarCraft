@@ -3,11 +3,18 @@
 
 #include "BattleField.h"
 
-int main() {
+void checkInput(char *fleet);
+
+int main(void) {
   const int buffSize = 50;
   char terranFleet[buffSize];
   char protossFleet[buffSize];
-  scanf("%s %s", terranFleet, protossFleet);
+
+  printf("Welcome to Starcraft!\nEnter Terran Fleet:\n\t- enter 'v' for Viking\n\t- enter 'b' for Battle Cruser\n");
+  scanf("%s", terranFleet);
+
+  printf("Enter Protoss Fleet:\n\t- enter 'c' for Carrier\n\t- enter 'p' for Phoenix\n");
+  scanf("%s", protossFleet);
 
   BattleField battleField;
   generateTerranFleet(&battleField, terranFleet);
@@ -17,3 +24,4 @@ int main() {
 
   return EXIT_SUCCESS;
 }
+

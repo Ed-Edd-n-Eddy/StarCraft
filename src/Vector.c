@@ -5,7 +5,7 @@
 void vectorInit(Vector *vec, size_t initialCapacity) {
   vec->capacity = initialCapacity;
   vec->size = 0;
-  vec->items = malloc(sizeof(void*) * vec->capacity);
+  vec->items = malloc(sizeof(int*) * vec->capacity);
 }
 
 size_t vectorGetSize(Vector *v) {
@@ -17,9 +17,9 @@ bool vectorIsEmpty(Vector *vec) {
 }
 
 void vectorResize(Vector *vec, size_t capacity) {
-  void **items = realloc(vec->items, sizeof(void*) * capacity);
+  void **items = realloc(vec->items, sizeof(int*) * capacity);
   if (items) {
-    vec->items = items;
+    vec->items = *items;
     vec->capacity = capacity;
   }
   if (vec->size >= capacity) {
@@ -27,7 +27,7 @@ void vectorResize(Vector *vec, size_t capacity) {
   }
 }
 
-void vectorPush(Vector *vec, void *item) {
+void vectorPush(Vector *vec, int *item) {
   if (vec->capacity == vec->size) {
     vectorResize(vec, vec->capacity * 2);
   }
@@ -35,20 +35,20 @@ void vectorPush(Vector *vec, void *item) {
   vec->size++;
 }
 
-void vectorSet(Vector *vec, size_t idx, void *item) {
+void vectorSet(Vector *vec, size_t idx, int *item) {
   if (idx < vec->size) {
     vec->items[idx] = item;
   }
 }
 
-void* vectorGet(Vector *vec, size_t idx) {
+int* vectorGet(Vector *vec, size_t idx) {
   if (idx < vec->size) {
     return vec->items[idx];
   }
   return NULL;
 }
 
-void* vectorBack(Vector *vec) {
+int* vectorBack(Vector *vec) {
   if (0 == vec->size) {
     return NULL;
   }

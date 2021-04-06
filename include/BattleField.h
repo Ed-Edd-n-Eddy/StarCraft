@@ -2,9 +2,6 @@
 #define BATTLEFIELD_H_
 
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 #include "BattleCruser.h"
 #include "Carrier.h"

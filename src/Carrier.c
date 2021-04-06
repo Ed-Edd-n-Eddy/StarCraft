@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "Carrier.h"
 
 void makeCarrier(int *ship, int ID, int damage, int  health, int shield, int regenerateShieldRate){

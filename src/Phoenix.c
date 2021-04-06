@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "Phoenix.h"
 
 void makePhoenix(int *ship, int ID, int damage, int  health, int shield, int regenerateShieldRate){

@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "Viking.h"
 
 void makeViking(int *ship, int ID, int damage, int health){

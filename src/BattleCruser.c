@@ -1,4 +1,8 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "BattleCruser.h"
+
 
 void makeBattleCruiser(int *ship, int ID, int damage, int health){
   /* passes on Battle Cruiser Air Ship attributes and creates Yamato Canon attribute */
